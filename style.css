@@ -1,4 +1,48 @@
+/* creating the variables */
+:root{
+    --main-color:#2196f3;
+    --alternative-color:#1787e0;
+    --background-color:#ececec;
+    --main-padding:100px;
+    --main-transition:0.3s;
+    --paragraph-color:#777;
+    --paragraph-line-hight:1.5;
+
+}
+/* basic */
 *{
     margin: 0;
     padding: 0;
+}
+body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--background-color);
+    
+}
+.head{
+    
+    display: flex;
+}
+.head .header{
+
+    margin: 5px auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+.head .header p{
+    color: var(--alternative-color);
+}
+.head .image{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    
+}
+.head .image img{
+    position: absolute;
+    width: 85px;
+    height: 55px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
 }
