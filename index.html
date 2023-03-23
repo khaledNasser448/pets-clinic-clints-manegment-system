@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    <!-- start header -->
     <div class="head">
         <div class="image">
             <img src="images/logo.jpg" alt="">
@@ -17,9 +18,13 @@
             <p> ( Clint Manegment System )</p>
         </div>
     </div>
+    <!-- end header -->
+
+    <!-- start input -->
+
     <div class="input">
         <input id="owner name" type="text" placeholder="Owner Name">
-        <input id="Owner Phone N umber" type="text" placeholder="Owner Phone N umber">
+        <input id="Owner Phone Number" type="text" placeholder="Owner Phone Number">
         <input id="Animal Name" type="text" placeholder="Animal Name">
         <input id="type" type="text" placeholder="Animal Type">
         <input id="ID" type="text" placeholder="Animal ID">
@@ -31,13 +36,98 @@
             <input id="exPrice" type="text" placeholder="Examination Price">
             <input id="drgPrice" type="text" placeholder="Drugs Price">
             <input  id="discount" type="text" placeholder="Discount" >
-            <small>total</small>
+            <small id="total">123</small>
 
         </div>
-        
+        <button id="submit">Create</button>
+        <!-- end input -->
+
+        <!-- start output -->
+        <div class="outpuHolder">
+            <input id="search" type="text" placeholder="Search">
+            <div class="seachBy">
+                <button id="searchById">Search By ID</button>
+                <button id="seachByAnimalName">Search by Animal Name</button>
+            </div>
+        </div>
+
+        <!-- end output -->
 
 
     </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>owner Name</th>
+            <th>Owner Phone Number</th>
+            <th>Animal Name</th>
+            <th>Animal Type</th>
+            <th>Animal Exam State</th>
+            <th>Exam Price</th>
+            <th>Drugs Price</th>
+            <th>Discount</th>
+            <th>Total</th>
+            <th>Ubdate</th>
+            <th>Delete</th>
+
+        </tr>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>sfaa</td>
+                <td>01158462210</td>
+                <td>beso</td>
+                <td>tom cat</td>
+                <td><textarea name="tableTextAtea" id="tableTextAtea"></textarea></td>
+                <td>100</td>
+                <td>50</td>
+                <td>0</td>
+                <td>150</td>
+                <td><button id="ubdate" class="ubdate">Ubdate</button></td>
+                <td> <button id="delete" class="delete">Delete</button></td>
+
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>sfaa</td>
+                <td>01158462210</td>
+                <td>beso</td>
+                <td>tom cat</td>
+                <td><textarea name="tableTextAtea" id="tableTextAtea"></textarea></td>
+                <td>100</td>
+                <td>50</td>
+                <td>0</td>
+                <td>150</td>
+                <td><button id="ubdate" class="ubdate">Ubdate</button></td>
+                <td> <button id="delete" class="delete">Delete</button></td>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>sfaa</td>
+                <td>01158462210</td>
+                <td>beso</td>
+                <td>tom cat</td>
+                <td><textarea name="tableTextAtea" id="tableTextAtea"></textarea></td>
+                <td>100</td>
+                <td>50</td>
+                <td>0</td>
+                <td>150</td>
+                <td><button id="ubdate" class="ubdate">Ubdate</button></td>
+                <td> <button id="delete" class="delete">Delete</button></td>
+                
+                
+                
+                
+                
+
+
+
+
+            </tr>
+        </tbody>
+    </table>
     <script src="main.js"></script>
     
 </body>

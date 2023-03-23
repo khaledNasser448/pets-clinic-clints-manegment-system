@@ -7,6 +7,7 @@
     --main-transition:0.3s;
     --paragraph-color:#777;
     --paragraph-line-hight:1.5;
+    --box-shadow :0 0 10px rgb(221 221 221);
 
 }
 /* basic */
@@ -64,6 +65,8 @@ body{
         border: none;
         width: 80%;
         height: 32px;
+        transition: var(--main-transition);
+        box-shadow: var(--box-shadow)
 }
 .input label{
     display: block;
@@ -109,4 +112,86 @@ body{
         border-radius: 6px;
 
 }
+.input input:focus{
+    transform: scale(1.1);
+}
+#total::before{
+    content: 'Total:';
+}
+.input button{
+    display: block;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    height: 30px;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--main-transition);
+
+}
+.input button:hover{
+    letter-spacing: 1px;
+}
+
 /* end the input */
+/* start output */
+.outpuHolder{
+    margin-top: 10px;
+}
+.outpuHolder .seachBy{
+    display: flex;
+    justify-content: space-between;
+}
+.outpuHolder .seachBy button{
+    width: 25%;
+}
+table{
+    width: 100%;
+}
+table th{
+    text-transform: uppercase;
+    padding: 3px;
+
+}
+table tbody{
+    width: 100%;
+    text-align: center;
+}
+table tbody tr td{
+    color: var(--paragraph-color);
+}
+table tbody textarea{
+    width: 100%;
+    height: 40px;
+    border: none;
+    box-shadow: var(--box-shadow);
+    border-radius: 3px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    box-shadow: var(--box-shadow);
+    border-radius: 0px 20px 0px 20px;
+}
+table tbody tr button{
+    padding: 4px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 3px;
+    transition: var(--main-transition);
+}
+table tbody tr .ubdate{
+    background-color: var(--main-color);
+}
+table tbody tr .delete{
+    background-color: red;
+}
+/* end output */
