@@ -23,9 +23,9 @@
     <!-- start input -->
 
     <div class="input">
-        <input id="owner name" type="text" placeholder="Owner Name">
-        <input id="Owner Phone Number" type="text" placeholder="Owner Phone Number">
-        <input id="Animal Name" type="text" placeholder="Animal Name">
+        <input  id="owner name" type="text" placeholder="Owner Name">
+        <input  id="Owner Phone Number" type="text" placeholder="Owner Phone Number">
+        <input  id="Animal Name" type="text" placeholder="Animal Name">
         <input id="type" type="text" placeholder="Animal Type">
         <input id="ID" type="text" placeholder="Animal ID">
         <div class="examinField">
@@ -33,10 +33,10 @@
             <textarea id="exam" name="exam" placeholder="Animal Examination State"></textarea>
         </div>
         <div class="price">
-            <input id="exPrice" type="text" placeholder="Examination Price">
-            <input id="drgPrice" type="text" placeholder="Drugs Price">
-            <input  id="discount" type="text" placeholder="Discount" >
-            <small id="total">123</small>
+            <input onkeyup="totalSum(this.value)" id="exPrice" type="text" placeholder="Examination Price">
+            <input onkeyup="totalSum(this.value)" id="drgPrice" type="text" placeholder="Drugs Price">
+            <input onkeyup="totalSum(this.value)" id="discount" type="text" placeholder="Discount" >
+            <small onkeyup="totalSum(this.value)" id="total"></small>
 
         </div>
         <button id="submit">Create</button>
