@@ -25,17 +25,37 @@ if (exPrice.value != 0){
     }
 
 }
-
-    
-        
-
-    
-    
-        
-    
 // (3) create product
-// (4) save product in the local storage
+let clintData;
+if(localStorage.client != null){
+    clintData = JSON.parse(localStorage.client);
+    
+}else{
+    clintData =[];
+}
+function create(){
+    if(ownerName != '' && phone != ''){
+        let newData = {
+            ownerName : ownerName.value,
+            phone: phone.value,
+            animalName: animalName.value,
+            type : type.value,
+            id:id.value,
+            examTexArea :examTexArea.value,
+            exPrice: exPrice.value,
+            drgPrice : drgPrice.value,
+            discount:discount.value,
+            total :total.innerHTML,
+        }
+        clintData.push(newData);
+        // (4) save product in the local storage
+        localStorage.setItem('client', JSON.stringify(clintData));
+        // console.log(clintData);
+    }
+
+}
 // (5) clear inputs
+
 // (6) read
 // (7) delete
 // (8) ubdate
