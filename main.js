@@ -52,6 +52,7 @@ function create(){
         localStorage.setItem('client', JSON.stringify(clintData));
         // console.log(clintData);
         clearData();
+        read();
     }
 
 }
@@ -69,8 +70,32 @@ function clearData(){
     total.innerHTML = '';
     total.style.backgroundColor =`red`;
 }
-
 // (6) read
+function read(){
+    let table = '';
+    for(let i = 0 ; i < clintData.length ; i ++){
+        table += `
+        <tr>
+            <td> ${clintData[i].id} </td>
+            <td>${clintData[i].ownerName}</td>
+            <td>${clintData[i].phone}</td>
+            <td>${clintData[i].animalName}</td>
+            <td>${clintData[i].type}</td>
+            <td><textarea name="tableTextAtea" id="tableTextAtea"> ${clintData[i].examTexArea}</textarea></td>
+            <td>${clintData[i].exPrice}</td>
+            <td>${clintData[i].drgPrice}</td>
+            <td>${clintData[i].discount}</td>
+            <td>${clintData[i].total}</td>
+            <td><button id="ubdate" class="ubdate">Ubdate</button></td>
+            <td> <button id="delete" class="delete">Delete</button></td>
+        </tr>
+        `
+    }
+    let tBody = document.getElementById("tbody");
+    tBody.innerHTML = table;
+}
+read();
+
 // (7) delete
 // (8) ubdate
 // (9) search
