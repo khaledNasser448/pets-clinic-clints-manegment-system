@@ -87,7 +87,7 @@ function read(){
             <td>${clintData[i].discount}</td>
             <td>${clintData[i].total}</td>
             <td><button id="ubdate" class="ubdate">Ubdate</button></td>
-            <td> <button id="delete" class="delete">Delete</button></td>
+            <td> <button onclick ="DleteClient( ${i} )" id="delete" class="delete">Delete</button></td>
         </tr>
         `
     }
@@ -97,6 +97,12 @@ function read(){
 read();
 
 // (7) delete
+function DleteClient(i){
+    clintData.splice(i,1);
+    localStorage.client = JSON.stringify(clintData);
+    read();
+
+}
 // (8) ubdate
 // (9) search
 // (10) clear data
