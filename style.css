@@ -150,6 +150,9 @@ body{
 .outpuHolder .seachBy button{
     width: 25%;
 }
+#deleteAllDiv button{
+    margin-top: 10px;
+}
 table{
     width: 100%;
 }

@@ -10,7 +10,8 @@ let drgPrice =document.getElementById("drgPrice");
 let discount = document.getElementById("discount");
 let total = document.getElementById("total");
 let createBtn = document.getElementById("submit");
-// console.log(ownerName,phone,animalName,type,id,examTexArea,exPrice,drgPrice,discount,total,createBtn);
+let Mood = 'create';
+let Atmp;
 
 
 // (2) get total
@@ -47,7 +48,14 @@ function create(){
             discount:discount.value,
             total :total.innerHTML,
         }
-        clintData.push(newData);
+        if(Mood==='create'){
+            clintData.push(newData);
+
+        }else{
+            clintData[Atmp] =newData;
+            Mood = 'create';
+            createBtn.innerHTML ='create';
+        }
         // (4) save product in the local storage
         localStorage.setItem('client', JSON.stringify(clintData));
         // console.log(clintData);
@@ -86,13 +94,21 @@ function read(){
             <td>${clintData[i].drgPrice}</td>
             <td>${clintData[i].discount}</td>
             <td>${clintData[i].total}</td>
-            <td><button id="ubdate" class="ubdate">Ubdate</button></td>
+            <td><button onclick ="Ubdate(${i})" id="ubdate" class="ubdate">Ubdate</button></td>
             <td> <button onclick ="DleteClient( ${i} )" id="delete" class="delete">Delete</button></td>
         </tr>
         `
     }
     let tBody = document.getElementById("tbody");
     tBody.innerHTML = table;
+    let deleteAllDiv = document.getElementById("deleteAllDiv");
+    if(clintData.length>0){
+        deleteAllDiv.innerHTML = `
+        <button  onclick ="deleteAll()" class="deleteAll"> Delete All(${clintData.length}) </button>
+        `
+    }else{
+        deleteAllDiv.innerHTML = '';
+    }
 }
 read();
 
@@ -103,6 +119,33 @@ function DleteClient(i){
     read();
 
 }
-// (8) ubdate
-// (9) search
-// (10) clear data
+// (8) DeletaAll 
+function deleteAll(){
+    clintData.splice(0);
+    localStorage.clear();
+    read();
+
+}
+// (9) ubdate
+function Ubdate(i){
+    id.value =clintData[i].id;
+    ownerName.value = clintData[i].ownerName;
+    phone.value = clintData[i].phone;
+    animalName.value = clintData[i].animalName;
+    type.value =clintData[i].value;
+    examTexArea.value= clintData[i].examTexArea;
+    exPrice.value = clintData[i].exPrice;
+    drgPrice.value = clintData[i].drgPrice;
+    discount.value =clintData[i].discount;
+    createBtn.innerHTML = 'Ubdate';
+    Mood = 'update'
+    Atmp= i;
+    scroll({
+        top:0,
+        behavior:"smooth",
+    });
+    totalSum();
+    
+}
+// (10) search
+// (11) clear data
