@@ -17,7 +17,7 @@ let createBtn = document.getElementById("submit");
 function totalSum(value){
 if (exPrice.value != 0){
     total.innerHTML= +exPrice.value + +drgPrice.value - +discount.value ;
-    total.style.backgroundColor=`green`
+    total.style.backgroundColor=`green`;
     }else{
         total.style.backgroundColor=`red`;
         total.innerHTML= '';
@@ -51,10 +51,24 @@ function create(){
         // (4) save product in the local storage
         localStorage.setItem('client', JSON.stringify(clintData));
         // console.log(clintData);
+        clearData();
     }
 
 }
 // (5) clear inputs
+function clearData(){
+    ownerName.value ='';
+    phone.value ='';
+    animalName.value ='';
+    type.value = '';
+    id.value = '';
+    examTexArea.value ='';
+    exPrice.value = '';
+    drgPrice.value = '';
+    discount.value = '';
+    total.innerHTML = '';
+    total.style.backgroundColor =`red`;
+}
 
 // (6) read
 // (7) delete
