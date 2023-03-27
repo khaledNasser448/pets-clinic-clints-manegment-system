@@ -44,10 +44,10 @@
 
         <!-- start output -->
         <div class="outpuHolder">
-            <input id="search" type="text" placeholder="Search">
+            <input onkeyup="searchFun(this.value)" id="search" type="text" placeholder="Search">
             <div class="seachBy">
-                <button id="searchById">Search By ID</button>
-                <button id="seachByAnimalName">Search by Animal Name</button>
+                <button onclick=" srchMood(this.id)" id="searchById">Search By ID</button>
+                <button onclick=" srchMood(this.id)" id="seachByAnimalName">Search by Animal Name</button>
             </div>
         </div>
         <div id="deleteAllDiv"></div>

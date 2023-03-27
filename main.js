@@ -39,9 +39,9 @@ function create(){
         let newData = {
             ownerName : ownerName.value,
             phone: phone.value,
-            animalName: animalName.value,
+            animalName: animalName.value.toLowerCase(),
             type : type.value,
-            id:id.value,
+            id:id.value.toLowerCase(),
             examTexArea :examTexArea.value,
             exPrice: exPrice.value,
             drgPrice : drgPrice.value,
@@ -148,4 +148,71 @@ function Ubdate(i){
     
 }
 // (10) search
-// (11) clear data
+let searchMood = 'id';
+function srchMood(idValue){
+    let searchInput =document.getElementById("search");
+    if(idValue=='searchById'){
+        searchMood ='id'
+        searchInput.placeholder ='Search by ID';
+    }else{
+        searchMood = 'animalName';
+        searchInput.placeholder ='Search by Animal Name';
+
+    }
+    searchInput.focus();
+    searchInput.value ='';
+    read();
+
+}
+function searchFun(value){
+    let table ='';
+    if(searchMood =='id'){
+        for(let i =0 ; i < clintData.length; i++){
+            if(clintData[i].id.includes(value)){
+                table += `
+                    <tr>
+                        <td> ${clintData[i].id} </td>
+                        <td>${clintData[i].ownerName}</td>
+                        <td>${clintData[i].phone}</td>
+                        <td>${clintData[i].animalName}</td>
+                        <td>${clintData[i].type}</td>
+                        <td><textarea name="tableTextAtea" id="tableTextAtea"> ${clintData[i].examTexArea}</textarea></td>
+                        <td>${clintData[i].exPrice}</td>
+                        <td>${clintData[i].drgPrice}</td>
+                        <td>${clintData[i].discount}</td>
+                        <td>${clintData[i].total}</td>
+                        <td><button onclick ="Ubdate(${i})" id="ubdate" class="ubdate">Ubdate</button></td>
+                        <td> <button onclick ="DleteClient( ${i} )" id="delete" class="delete">Delete</button></td>
+                    </tr>
+                    `
+            }
+        }
+    }else{
+        for(let i =0 ; i < clintData.length; i++){
+            if(clintData[i].animalName.includes(value.toLowerCase())){
+                table += `
+                    <tr>
+                        <td> ${clintData[i].id} </td>
+                        <td>${clintData[i].ownerName}</td>
+                        <td>${clintData[i].phone}</td>
+                        <td>${clintData[i].animalName}</td>
+                        <td>${clintData[i].type}</td>
+                        <td><textarea name="tableTextAtea" id="tableTextAtea"> ${clintData[i].examTexArea}</textarea></td>
+                        <td>${clintData[i].exPrice}</td>
+                        <td>${clintData[i].drgPrice}</td>
+                        <td>${clintData[i].discount}</td>
+                        <td>${clintData[i].total}</td>
+                        <td><button onclick ="Ubdate(${i})" id="ubdate" class="ubdate">Ubdate</button></td>
+                        <td> <button onclick ="DleteClient( ${i} )" id="delete" class="delete">Delete</button></td>
+                    </tr>
+                    `
+            }
+
+        }
+    
+    }
+    tBody = document.getElementById("tbody");
+    tBody.innerHTML = table;
+
+}
+// (11) clean data
