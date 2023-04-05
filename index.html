@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fluffy Tails Manegment Sys</title>
     <link rel="stylesheet" href="/style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Jomhuria&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&family=Work+Sans:wght@200;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- start header -->
@@ -15,64 +19,67 @@
         </div>
         <div class="header">
             <h1>fluffy Tails</h1>
-            <p> ( Clint Manegment System )</p>
+            <p>  Pet clinic </p>
         </div>
     </div>
     <!-- end header -->
-
+    
     <!-- start input -->
-
-    <div class="input">
-        <input  id="owner name" type="text" placeholder="Owner Name">
-        <input  id="Owner Phone Number" type="text" placeholder="Owner Phone Number">
-        <input  id="Animal Name" type="text" placeholder="Animal Name">
-        <input id="type" type="text" placeholder="Animal Type">
-        <input id="ID" type="text" placeholder="Animal ID">
-        <div class="examinField">
-            <!-- <label for="exam">Animal Examination State:</label> -->
-            <textarea id="exam" name="exam" placeholder="Animal Examination State"></textarea>
-        </div>
-        <div class="price">
-            <input onkeyup="totalSum(this.value)" id="exPrice" type="text" placeholder="Examination Price">
-            <input onkeyup="totalSum(this.value)" id="drgPrice" type="text" placeholder="Drugs Price">
-            <input onkeyup="totalSum(this.value)" id="discount" type="text" placeholder="Discount" >
-            <small onkeyup="totalSum(this.value)" id="total"></small>
-
-        </div>
-        <button onclick="create()" id="submit">Create</button>
-        <!-- end input -->
-
-        <!-- start output -->
-        <div class="outpuHolder">
-            <input onkeyup="searchFun(this.value)" id="search" type="text" placeholder="Search">
-            <div class="seachBy">
-                <button onclick=" srchMood(this.id)" id="searchById">Search By ID</button>
-                <button onclick=" srchMood(this.id)" id="seachByAnimalName">Search by Animal Name</button>
+    <div class="container">
+        <div class="input">
+            <input  id="owner name" type="text" placeholder="Owner Name">
+            <input  id="Owner Phone Number" type="text" placeholder="Owner Phone Number">
+            <input  id="Animal Name" type="text" placeholder="Animal Name">
+            <input id="type" type="text" placeholder="Animal Type">
+            <input id="ID" type="text" placeholder="Animal ID">
+            <div class="examinField">
+                <!-- <label for="exam">Animal Examination State:</label> -->
+                <textarea id="exam" name="exam" placeholder="Animal Examination State"></textarea>
             </div>
+            <div class="price">
+                <input onkeyup="totalSum(this.value)" id="exPrice" type="text" placeholder="Examination Price">
+                <input onkeyup="totalSum(this.value)" id="drgPrice" type="text" placeholder="Drugs Price">
+                <input onkeyup="totalSum(this.value)" id="discount" type="text" placeholder="Discount" >
+                <small onkeyup="totalSum(this.value)" id="total"></small>
+    
+            </div>
+            <button onclick="create()" id="submit">Create</button>
+            <!-- end input -->
+    
+            <!-- start output -->
+            <div class="outpuHolder">
+                <input onkeyup="searchFun(this.value)" id="search" type="text" placeholder="Search">
+                <div class="seachBy">
+                    <button onclick=" srchMood(this.id)" id="searchById">Search By ID</button>
+                    <button onclick=" srchMood(this.id)" id="seachByAnimalName">Search by Animal Name</button>
+                </div>
+            </div>
+            <div id="deleteAllDiv"></div>
+    
+            <!-- end output -->
         </div>
-        <div id="deleteAllDiv"></div>
 
-        <!-- end output -->
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Pet Name</th>
+                <th>Type</th>
+                <th>Case</th>
+                <th>Exam</th>
+                <th>shop</th>
+                <th>Discount</th>
+                <th>Total Paid</th>
+                <th>Ubdate</th>
+                <th>Delete</th>
+    
+            </tr>
+            <tbody id="tbody">
+            </tbody>
+        </table>
     </div>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>owner Name</th>
-            <th>Owner Phone Number</th>
-            <th>Animal Name</th>
-            <th>Animal Type</th>
-            <th>Animal Exam State</th>
-            <th>Exam Price</th>
-            <th>Drugs Price</th>
-            <th>Discount</th>
-            <th>Total</th>
-            <th>Ubdate</th>
-            <th>Delete</th>
 
-        </tr>
-        <tbody id="tbody">
-        </tbody>
-    </table>
     <script src="main.js"></script>
     
 </body>

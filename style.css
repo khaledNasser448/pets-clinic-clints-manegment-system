@@ -1,4 +1,4 @@
-/* creating the variables */
+/* start global rules */
 :root{
     --main-color:#2196f3;
     --alternative-color:#1787e0;
@@ -16,11 +16,40 @@
     padding: 0;
 }
 body{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Baloo Bhaijaan 2', cursive;
     background-color: var(--background-color);
     
 }
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media(min-width:768px){
+    .container{
+        width:750px;
+    }
+}
+/* medium */
+@media(min-width:992px){
+    .container{
+        width:970px;
+    }
+}
+    /* large */
+    @media(min-width:1200px){
+        .container{
+            width: 1170px;
+        }
+    }
+/* end global rules */
 /* start the heading */
+.container{
+    background-image: url(/images/background.png);
+}
 .head{
     
     display: flex;
@@ -30,6 +59,9 @@ body{
     margin: 5px auto;
     text-align: center;
     text-transform: uppercase;
+}
+.head .header h1{
+    
 }
 .head .header p{
     color: var(--alternative-color);
@@ -52,8 +84,7 @@ body{
 /* start the input */
 .input{
     display: block;
-    margin-top: 20px
-
+    margin-top: 20px;
 }
 .input input{
         display: block;
@@ -80,7 +111,7 @@ body{
     text-align: center; align-items: center;
 }
 .input .examinField{
-    display: block;
+        display: block;
         text-align: center;
         margin: auto;
         margin-bottom: 10px;

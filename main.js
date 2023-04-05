@@ -35,7 +35,7 @@ if(localStorage.client != null){
     clintData =[];
 }
 function create(){
-    if(ownerName != '' && phone != ''){
+    if(ownerName.value !== '' && phone.value !== ''){
         let newData = {
             ownerName : ownerName.value,
             phone: phone.value,
